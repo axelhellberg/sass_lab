@@ -1,0 +1,37 @@
+@media screen and (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    #main-menu {
+        position: absolute;
+        right: 0;
+        top: 72px;
+        background-color: transparentize($menu1, 0.15);
+        box-shadow: 0px 1px 4px -2px #333;
+        ul {
+            flex-direction: column;
+    
+            li {
+                display: flex;
+                justify-content: center;
+                border-radius: 0 !important;
+                padding: 0;
+                &:after {
+                    border-radius: 0 !important;
+                    width: calc(100% - 4px) !important;
+                    left: 2px;
+                }
+                a {
+                    padding: 1rem 1.5rem;
+                }
+            }
+        } 
+    }
+}
+
+@media screen and (min-width: 769px) {
+    #main-menu.closed {
+        transform: none;
+    }
+}

@@ -1,0 +1,113 @@
+.menu-btn {
+    position: relative;
+    width: 25px;
+    height: 22px;
+    cursor: pointer;
+    display: none;
+    margin-left: auto;
+
+    span {
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        border-radius: 4px;
+        background-color: $light;
+        pointer-events: none;
+        transition: .25s;
+
+        &:nth-child(1) {
+            top: 0;
+        }
+
+        &:nth-child(2) {
+            top: 9px;
+            opacity: 1;
+        }
+
+        &:nth-child(3) {
+            top: 18px;
+        }
+    }
+}
+
+.menu-btn.close {
+    span {
+        &:nth-child(1) {
+            top: 9px;
+            @include transform(rotate(45deg));
+        }
+
+        &:nth-child(2) {
+            opacity: 0;
+            width: 0;
+        }
+
+        &:nth-child(3) {
+            top: 9px;
+            @include transform(rotate(-45deg));
+        }
+    }
+}
+
+#main-menu {
+    font-size: $large-text;
+    transition: .25s;
+    transform-origin: top;
+    margin-left: auto;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+
+        li {
+            display: inline-block;
+            @extend %glossy;
+            background: linear-gradient($menu1, $menu2);
+            padding: .5rem 0;
+
+            &:after {
+                width: 100%;
+                left: 0;
+            }
+
+            &:first-child {
+                border-top-left-radius: 1rem;
+                border-bottom-left-radius: 1rem;
+                &:after { 
+                    left: 2px;
+                    width: calc(100% - 2px);
+                    border-top-left-radius: calc(1rem - 2px); 
+                }
+            }
+
+            &:last-child {
+                border-top-right-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                &:after {   
+                    width: calc(100% - 2px);                  
+                    border-top-right-radius: calc(1rem - 2px); 
+                }
+            }
+
+            &:hover {
+                background: linear-gradient(darken($darkpink, 15%), darken($pink, 15%));
+            }
+
+            a {
+                padding: .5rem 1.5rem;
+                line-height: $large-text;
+                text-decoration: none;
+                color: $light;
+            }
+        }
+    }
+}
+
+#main-menu.closed {
+    @include transform(scaleY(0));
+}
+
+

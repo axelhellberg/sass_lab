@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
+
+$cursive: 'Lobster Two', cursive;
+
+$plain-font: Arial, Helvetica, sans-serif;
+
+$title-font: $plain-font;
+
+$darkpink: #800080;
+$pink: lighten(desaturate($darkpink, 40%), 40%);
+
+$darkcyan: #008080;
+$cyan: lighten(desaturate($darkcyan, 40%), 40%);
+
+$menu1: $darkpink;
+$menu2: $pink;
+
+$light: #E6E6E6;
+
+// $dark: #800080;
+
+$text: #39393A;
+
+// $contrast: #FF8552;
+
+$large-text: 18.66px;
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
+
