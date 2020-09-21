@@ -19,11 +19,13 @@ $light: #E6E6E6;
 
 // $dark: #800080;
 
-$text: #39393A;
+$dark: #39393A;
 
 // $contrast: #FF8552;
 
 $large-text: 18.66px;
+
+
 
 @mixin transform($property) {
     -webkit-transform: $property;

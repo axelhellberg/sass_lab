@@ -9,7 +9,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: $light;
-    color: $text;
+    color: $dark;
     margin: 0;
 }
 
@@ -32,7 +32,6 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    // justify-content: space-between;
     padding: 1rem;
     position: relative;
     z-index: 1;
@@ -63,5 +62,17 @@ header {
         max-width: 700px;
     }
 }
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}
+
 
 
