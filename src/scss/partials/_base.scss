@@ -12,20 +12,37 @@ $pink: lighten(desaturate($darkpink, 40%), 40%);
 $darkcyan: #008080;
 $cyan: lighten(desaturate($darkcyan, 40%), 40%);
 
-$menu1: $darkpink;
-$menu2: $pink;
+// $menu1: $darkpink;
+// $menu2: $pink;
 
 $light: #E6E6E6;
-
-// $dark: #800080;
-
 $dark: #39393A;
-
-// $contrast: #FF8552;
 
 $large-text: 18.66px;
 
+@mixin theme-colors($light-theme: true) {
+    @if $light-theme {
+        background-color: $light;
+        color: $dark;
+    } @else {
+        background-color: $dark;
+        color: $light;
+    }
+}
 
+@mixin button-colors($pink-button: true) {
+    @if $pink-button {
+        background: linear-gradient($darkpink, $pink);
+        &:hover {
+            background: linear-gradient(darken($darkpink, 15%), darken($pink, 15%));
+        }
+    } @else {
+        background: linear-gradient($darkcyan, $cyan);
+        &:hover {
+            background: linear-gradient(darken($darkcyan, 15%), darken($cyan, 15%));
+        }
+    }
+}
 
 @mixin transform($property) {
     -webkit-transform: $property;

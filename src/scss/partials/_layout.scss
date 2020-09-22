@@ -8,7 +8,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: $light;
+    background-color: $darkcyan;
     color: $dark;
     margin: 0;
 }
@@ -22,7 +22,7 @@ header {
     font-family: $title-font;
     position: relative;
     @extend %glossy;
-    background: linear-gradient($menu1, $menu2);
+    background: linear-gradient($darkpink, $pink);
 }
 
 #top {
@@ -34,7 +34,7 @@ header {
     align-items: center;
     padding: 1rem;
     position: relative;
-    z-index: 1;
+    z-index: 3;
 }
 
 #site-name {
@@ -54,7 +54,7 @@ header {
 }
 
 .content {
-    padding: 0 1rem;
+    padding: 1rem;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -63,15 +63,71 @@ header {
     }
 }
 
+.wrapper.light {
+    @include theme-colors($light-theme: true);
+}
+
+.wrapper.dark {
+    @include theme-colors($light-theme: false);
+}
+
 footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 2rem 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    color: $light;
+    flex-wrap: wrap;
     ul {
         list-style: none;
         padding: 0;
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
     }
+}
+
+.parallax {
+    background-image: url("../img/beakers.jpg");
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $light;
+    position: relative;
+    .inner {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        width: 100%;
+        p {
+            max-width: 700px;
+        }
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: transparentize($dark, .3);
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.avatar {
+    border-radius: 50%;
+    max-width: 100px;
 }
 
 

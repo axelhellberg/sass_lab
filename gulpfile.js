@@ -54,10 +54,10 @@ function serve() {
 
 function watchTask() {
     watch(files.scssPath, cssTask);
-    // watch(files.htmlPath, copyHTML).on('change', browserSync.reload);
-    // watch(files.jsPath, jsTask).on('change', browserSync.reload);
-    // watch(files.imgPath, imgTask).on('change', browserSync.reload);
-    watch([files.htmlPath, files.jsPath, files.imgPath]).on('change', browserSync.reload);
+    watch(files.htmlPath, copyHTML).on('change', browserSync.reload);
+    watch(files.jsPath, jsTask).on('change', browserSync.reload);
+    watch(files.imgPath, imgTask).on('change', browserSync.reload);
+    // watch([files.htmlPath, files.jsPath, files.imgPath]).on('change', browserSync.reload);
 }
 
 exports.default = series(

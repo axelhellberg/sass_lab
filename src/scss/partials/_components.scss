@@ -20,18 +20,15 @@
 .contact-btn {
     @extend %glossy;
     display: inline-block;
-    background-color: $darkcyan;
     padding: 1rem;
-    background: linear-gradient($darkcyan, $cyan);
     border-radius: 8px;
-
+    @include button-colors($pink-button: false);
     &:after {
         border-top-right-radius: 6px;
         border-top-left-radius: 6px;
     }
+}
 
-    &:hover {
-        background: linear-gradient(darken($darkcyan, 15%), darken($cyan, 15%));
-    }
-    
+.contact-btn.pink {
+    @include button-colors($pink-button: true);
 }
