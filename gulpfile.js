@@ -52,15 +52,14 @@ function serve() {
     });
 }
 
-function watchTask() {
+function watchTask() { // watch for changes in files, run tasks and reload browser
     watch(files.scssPath, cssTask);
     watch(files.htmlPath, copyHTML).on('change', browserSync.reload);
     watch(files.jsPath, jsTask).on('change', browserSync.reload);
     watch(files.imgPath, imgTask).on('change', browserSync.reload);
-    // watch([files.htmlPath, files.jsPath, files.imgPath]).on('change', browserSync.reload);
 }
 
-exports.default = series(
+exports.default = series( // export tasks
     parallel(
         copyHTML,
         jsTask,
