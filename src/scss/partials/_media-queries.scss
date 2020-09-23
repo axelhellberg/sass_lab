@@ -30,6 +30,21 @@
     }
 }
 
+@media screen and (max-width: 500px) {
+    .inner {
+        text-align: center;
+    }
+    .content {
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1, h2, h3 {
+            margin-bottom: 0;
+        }
+    }
+}
+
 @media screen and (min-width: 769px) {
     #main-menu.closed {
         transform: none;
