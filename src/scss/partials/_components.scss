@@ -17,6 +17,12 @@
     }
 }
 
+%avatar {
+    border-radius: 50%;
+    max-width: 100px;
+    position: relative;
+}
+
 .contact-btn {
     @extend %glossy;
     display: inline-block;

@@ -88,6 +88,7 @@ footer {
             margin-right: 1rem;
         }
     }
+    a {color: $light;}
 }
 
 .parallax {
@@ -102,6 +103,7 @@ footer {
     background-size: cover;
     color: $light;
     position: relative;
+
     .inner {
         position: relative;
         z-index: 2;
@@ -114,8 +116,10 @@ footer {
         }
     }
 
+    
+
     &:after {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -126,9 +130,10 @@ footer {
 }
 
 .avatar {
-    border-radius: 50%;
-    max-width: 100px;
+    @extend %avatar;
+    @include filter(drop-shadow(3px 3px 3px $dark));
 }
+
 
 
 

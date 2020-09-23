@@ -47,3 +47,8 @@ $large-text: 18.66px;
     transform: $property;
 }
 
+@mixin filter($property) {
+    -webkit-filter: $property;
+    filter: $property;
+}
+
