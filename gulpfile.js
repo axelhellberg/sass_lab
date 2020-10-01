@@ -7,6 +7,9 @@ const imgMin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 
+const sourcemaps = require('gulp-sourcemaps');
+const babel = require('gulp-babel');
+
 sass.compiler = require('node-sass');
 
 const files = { // object containing source file directories
@@ -32,16 +35,18 @@ function cssTask() {
 
 function jsTask() {
     return src(files.jsPath)
+        .pipe(sourcemaps.init())
+        .pipe(babel())
         .pipe(concat('main.js')) // concatenate all js files into main.js
         .pipe(terser()) // minify javascript
+        .pipe(sourcemaps.write('.'))
         .pipe(dest('pub/js')) // send concatenated file to publishing js folder
 }
 
 function imgTask() {
     return src(files.imgPath)
         .pipe(imgMin()) // minify images
-        .pipe(dest('pub/img') // send images to publishing image folder
-    );
+        .pipe(dest('pub/img')); // send images to publishing image folder
 }
 
 function serve() {
